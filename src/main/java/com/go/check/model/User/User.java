@@ -1,8 +1,9 @@
-package com.go.check.User;
+package com.go.check.model.User;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+import com.go.check.model.Droppable;
 import com.go.check.model.auth.Authority;
 import com.go.check.model.auth.Password;
 import lombok.Getter;
@@ -19,7 +20,7 @@ import java.time.ZonedDateTime;
 @DynamicUpdate
 @Getter
 @Table(name = "user")
-public class User implements Serializable {
+public class User implements Serializable, Droppable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
